@@ -23,7 +23,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/fancl20/dhcp4"
+	"github.com/d2g/dhcp4"
 	"github.com/fancl20/dhcp4client"
 	"github.com/vishvananda/netlink"
 

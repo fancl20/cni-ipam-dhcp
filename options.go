@@ -21,7 +21,7 @@ import (
 	"time"
 
 	"github.com/containernetworking/cni/pkg/types"
-	"github.com/fancl20/dhcp4"
+	"github.com/d2g/dhcp4"
 )
 
 func parseRouter(opts dhcp4.Options) net.IP {

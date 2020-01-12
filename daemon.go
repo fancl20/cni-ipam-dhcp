@@ -25,6 +25,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"strings"
 	"sync"
 
 	"github.com/containernetworking/cni/pkg/skel"
@@ -55,21 +56,18 @@ func generateClientID(containerID string, netName string, ifName string) string 
 }
 
 // Find a better way to get hostname or container tag
-// TODO: allow config prefix
-func getHostname(containerID string) (string, error) {
-	f, err := os.Open("/var/lib/containers/storage/overlay-containers/" + containerID + "/userdata/config.json")
-	if err != nil {
-		return "", fmt.Errorf("error opening container config: %v", err)
+func getHostname(args string) (string, error) {
+	prefix := "K8S_POD_NAME="
+	idx := strings.Index(args, prefix)
+	if idx == -1 {
+		return "", fmt.Errorf("error finding K8S_POD_NAME: %v", args)
 	}
-	buf, err := ioutil.ReadAll(f)
-	if err != nil {
-		return "", fmt.Errorf("error reading container config: %v", err)
+	idx += len(prefix)
+	end := strings.IndexByte(args[idx:], ';')
+	if end == -1 {
+		return args[idx:], nil
 	}
-	values := make(map[string]interface{})
-	if err := json.Unmarshal(buf, values); err != nil {
-		return "", fmt.Errorf("error parsing container config: %v", err)
-	}
-	return values["hostname"].(string), nil
+	return args[idx : idx+end], nil
 }
 
 // Allocate acquires an IP from a DHCP server for a specified container.
@@ -82,7 +80,7 @@ func (d *DHCP) Allocate(args *skel.CmdArgs, result *current.Result) error {
 
 	clientID := generateClientID(args.ContainerID, conf.Name, args.IfName)
 	hostNetns := d.hostNetnsPrefix + args.Netns
-	hostname, err := getHostname(args.ContainerID)
+	hostname, err := getHostname(args.Args)
 	if err != nil {
 		return err
 	}

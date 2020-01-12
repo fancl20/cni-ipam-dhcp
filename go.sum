@@ -22,6 +22,8 @@ github.com/fancl20/dhcp4client v1.0.0 h1:suYBsYZIkSlUMEz4TAYCczKf62IA2UWC+O8+Ktd
 github.com/fancl20/dhcp4client v1.0.0/go.mod h1:j0hNfjhrt2SxUOw55nL0ATM/z4Yt3t2Kd1mW34z5W5s=
 github.com/fancl20/dhcp4client v1.1.0 h1:/Ot9SHLqhNAmR0H9Tjx/nKgMs4wZPuP1Af6rLVIZFak=
 github.com/fancl20/dhcp4client v1.1.0/go.mod h1:DblIu0PVTit8OovzMLzwLrUuKbyFoAgwsg5kgXCBOYg=
+github.com/fancl20/dhcp4client v1.1.1 h1:QtP/WXB6jfWA6VQOyvHfis2TC4HWZ6e110NWKotcXrQ=
+github.com/fancl20/dhcp4client v1.1.1/go.mod h1:kCudGiwzdrEinns26s8SZr11wQEXR/2qtlzDBcCWyrw=
 github.com/godbus/dbus v0.0.0-20180201030542-885f9cc04c9c/go.mod h1:/YcGZj5zSblfDWMMoOzV4fas9FZnQYTkDnsGvmh2Grw=
 github.com/golang/protobuf v1.3.1/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/j-keck/arping v0.0.0-20160618110441-2cf9dc699c56/go.mod h1:ymszkNOg6tORTn+6F6j+Jc8TOr5osrynvN6ivFWZ2GA=

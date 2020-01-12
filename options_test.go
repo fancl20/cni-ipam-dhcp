@@ -19,7 +19,7 @@ import (
 	"testing"
 
 	"github.com/containernetworking/cni/pkg/types"
-	"github.com/fancl20/dhcp4"
+	"github.com/d2g/dhcp4"
 )
 
 func validateRoutes(t *testing.T, routes []*types.Route) {

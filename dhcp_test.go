@@ -31,10 +31,10 @@ import (
 
 	"github.com/vishvananda/netlink"
 
+	"github.com/d2g/dhcp4"
 	"github.com/d2g/dhcp4server"
 	"github.com/d2g/dhcp4server/leasepool"
 	"github.com/d2g/dhcp4server/leasepool/memorypool"
-	"github.com/fancl20/dhcp4"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
