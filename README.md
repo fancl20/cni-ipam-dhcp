@@ -1,6 +1,6 @@
 # dhcp plugin
 
-NOTE: The code is from (Official CNI DHCP Plugin)[https://github.com/containernetworking/plugins/tree/master/plugins/ipam/dhcp].  It's modified for passing the container's name as hostname in DHCP request, enabling dns resolver binding the hostname to the container.
+NOTE: The code is from [Official CNI DHCP Plugin](https://github.com/containernetworking/plugins/tree/master/plugins/ipam/dhcp).  It's modified for passing the container's name as hostname in DHCP request, enabling dns resolver binding the hostname to the container.
 
 ## Overview
 
